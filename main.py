@@ -40,6 +40,7 @@ def move():
     x_pos=info["arena"]["state"][self_url]["x"]
     y_pos=info["arena"]["state"][self_url]["y"]
     my_dir=info["arena"]["state"][self_url]["direction"]
+    hit=info["arena"]["state"][self_url]["wasHit"]
     all_x=[]
     all_y=[]
     x_dir=[]
@@ -58,13 +59,21 @@ def move():
     # (x_dir,y_dir)=relative_direction(all_x,all_y,x_dir,y_dir)
     for i in all_y:
         if i<0 and my_dir=="N":
+            if hit and (-1 not in all_y):
+                return move[0]
             return moves[1]
         elif i>0 and my_dir=="S":
+            if hit and (1 not in all_y):
+                return move[0]
             return moves[1]
     for i in all_x:
         if i<0 and my_dir=="E":
+            if hit and (-1 not in all_x):
+                return move[0]
             return moves[1]
         elif i>0 and my_dir=="W":
+            if hit and (1 not in all_x):
+                return move[0]
             return moves[1]
     return moves[can_move(x_pos,y_pos,x_lim-1,y_lim-1,my_dir)]
     # TODO add your implementation here to replace the random response
