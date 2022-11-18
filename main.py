@@ -83,11 +83,16 @@ def can_move(x_pos,y_pos,x_lim,y_lim,dir):
         else:
             return 3
     elif y_pos<=0 and dir=="N":
-        return 3
+        if x_pos>=x_lim:
+            return 2
+        else:
+            return 3
     elif y_pos>=y_lim and dir=="S":
-        return 3
-    else:
-        return 0
+        if x_pos<=0:
+            return 2
+        else:
+            return 3
+    return 0
 
 if __name__ == "__main__":
   app.run(debug=False,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
