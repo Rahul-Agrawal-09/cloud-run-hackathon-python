@@ -51,7 +51,7 @@ def move():
                 all_y.append(i["y"]-y_pos)
                 # y_dir.append(i["direction"])
         elif i["y"]==y_pos:
-            if (i["x"]-x_pos<=3) and (i["x"]-x_pos)>=3 and i["x"]!=x_pos:
+            if (i["x"]-x_pos<=3) and (i["x"]-x_pos)>=-3 and i["x"]!=x_pos:
                 all_x.append(x_pos-i["x"])
                 #all_y.append(i["y"])
                 # x_dir.append(i["direction"])
