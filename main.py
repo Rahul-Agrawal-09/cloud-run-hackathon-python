@@ -32,7 +32,9 @@ def index():
 def move():
     request.get_data()
     logger.info(request.json)
-    
+
+    return move[3]
+
     info=request.get_json()
     self_url=info["_links"]["self"]["href"]
     x_lim=info["arena"]["dims"][0]
