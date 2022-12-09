@@ -45,8 +45,6 @@ def move():
     all_y=[]
     x_dir=[]
     y_dir=[]
-    if hit:
-        return moves[3]
     for i in info["arena"]["state"].values():
         if i["x"]==x_pos:
             if (i["y"]-y_pos)<=3 and (i["y"]-y_pos)>=-3 and i["y"]!=y_pos:
